@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet/less" href="{{ asset('less/global.less') }}" type="text/css" media="all" />
+        <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:300,700" rel="stylesheet" type="text/css" media="all">
+        <title>{% block title %}teachi, Panu Leppäniemi{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <section id="wrapper">
+            <header id="logo">
+                teachi
+            </header>
+
+            <nav id="main">
+                {% block content_header_more %}
+                    <ul>
+                        <li><a href="#">Link</a></li>
+                    </ul>
+                {% endblock %}
+            </nav>
+
+            {% block content_header %}
+                
+            {% endblock %}
+
+            <section id="content">
+                {% block content %}
+                {% endblock %}
+            </section>
+
+            <footer></footer>
+        </section>
+    </body>
+</html>
