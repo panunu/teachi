@@ -1,6 +1,10 @@
 _index:
-    pattern:  /
+    pattern:  /material
     defaults: { _controller: TeachiMaterialBundle:Subject:index }
+
+_index:
+    pattern:  /material/view
+    defaults: { _controller: TeachiMaterialBundle:Subject:view }
 
 _assetic:
     resource: .

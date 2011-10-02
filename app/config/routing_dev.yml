@@ -1,7 +1,3 @@
-_index:
-    pattern:  /
-    defaults: { _controller: TeachiMaterialBundle:Subject:index }
-
 _assetic:
     resource: .
     type:     assetic
