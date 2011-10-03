@@ -21,6 +21,7 @@ class AppKernel extends Kernel
 
         // Stack teachi related bundles here.
         $bundles[] = new Teachi\MaterialBundle\TeachiMaterialBundle();
+        $bundles[] = new Teachi\MainBundle\TeachiMainBundle();
         
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
