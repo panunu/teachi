@@ -3,7 +3,7 @@
 namespace Teachi\MaterialBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM,
-    Teach\MainBundle\Entity;
+    Teachi\MainBundle\Entity;
 
 /**
  * Teachi\MaterialBundle\Entity\Book
@@ -39,13 +39,17 @@ class Book
     /**
      * @var Author
      *
-     * @ORM\ManyToOne(targetEntity="Author")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Author", referencedColumnName="id")
-     * })
+     * @ORM\ManyToOne(targetEntity="Teachi\MainBundle\Entity\Author")
+     * @ORM\JoinColumn(name="Author", referencedColumnName="id")
      */
     private $author;
-
+    
+    /**
+     * @var array
+     * 
+     * @ORM\OneToMany(targetEntity="Chapter", mappedBy="book")
+     */
+    private $chapters;
 
 
     /**
@@ -116,5 +120,15 @@ class Book
     public function getAuthor()
     {
         return $this->author;
+    }
+    
+    /**
+     * Get chapters
+     *
+     * @return array
+     */
+    public function getChapters()
+    {
+        return $this->chapters;
     }
 }

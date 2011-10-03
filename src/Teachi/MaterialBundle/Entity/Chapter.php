@@ -38,10 +38,8 @@ class Chapter
     /**
      * @var Book
      *
-     * @ORM\ManyToOne(targetEntity="Book")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Book", referencedColumnName="id")
-     * })
+     * @ORM\ManyToOne(targetEntity="Book", inversedBy="chapters")
+     * @ORM\JoinColumn(name="Book", referencedColumnName="id")
      */
     private $book;
 
