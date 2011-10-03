@@ -1,11 +1,12 @@
 <?php
 
-namespace Teachi\MainBundle\Entity;
+namespace Teachi\MaterialBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping as ORM,
+    Teach\MainBundle\Entity;
 
 /**
- * Teachi\MainBundle\Entity\Book
+ * Teachi\MaterialBundle\Entity\Book
  *
  * @ORM\Table(name="Book")
  * @ORM\Entity
@@ -102,7 +103,7 @@ class Book
      *
      * @param Teachi\MainBundle\Entity\Author $author
      */
-    public function setAuthor(\Teachi\MainBundle\Entity\Author $author)
+    public function setAuthor(Author $author)
     {
         $this->author = $author;
     }

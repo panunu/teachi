@@ -102,7 +102,7 @@ class Author
      *
      * @param Teachi\MainBundle\Entity\Account $account
      */
-    public function setAccount(\Teachi\MainBundle\Entity\Account $account)
+    public function setAccount(Account $account)
     {
         $this->account = $account;
     }

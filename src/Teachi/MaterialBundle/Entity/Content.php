@@ -1,11 +1,11 @@
 <?php
 
-namespace Teachi\MainBundle\Entity;
+namespace Teachi\MaterialBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Teachi\MainBundle\Entity\Content
+ * Teachi\MaterialBundle\Entity\Content
  *
  * @ORM\Table(name="Content")
  * @ORM\Entity
@@ -100,9 +100,9 @@ class Content
     /**
      * Set chapter
      *
-     * @param Teachi\MainBundle\Entity\Chapter $chapter
+     * @param Teachi\MaterialBundle\Entity\Chapter $chapter
      */
-    public function setChapter(\Teachi\MainBundle\Entity\Chapter $chapter)
+    public function setChapter(Chapter $chapter)
     {
         $this->chapter = $chapter;
     }
@@ -110,7 +110,7 @@ class Content
     /**
      * Get chapter
      *
-     * @return Teachi\MainBundle\Entity\Chapter 
+     * @return Teachi\MaterialBundle\Entity\Chapter 
      */
     public function getChapter()
     {
