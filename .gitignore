@@ -6,3 +6,5 @@
 /app/logs/*
 
 /app/config/parameters.ini
+
+/database/teachi.mwb.bak
