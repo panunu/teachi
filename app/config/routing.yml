@@ -1,6 +1,10 @@
-_index:
-    pattern:  /material/{book}/{chapter}
-    defaults: { _controller: TeachiMaterialBundle:Book:view, chapter: 1, _locale: fi }
+material_book:
+    pattern:  /materiaali/{book}
+    defaults: { _controller: TeachiMaterialBundle:Book:view, _locale: fi }
+
+material_chapter:
+    pattern:  /materiaali/{book}/{chapter}
+    defaults: { _controller: TeachiMaterialBundle:Chapter:view, _locale: fi }
 
 _assetic:
     resource: .

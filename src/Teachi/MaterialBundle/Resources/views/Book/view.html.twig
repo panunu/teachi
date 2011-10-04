@@ -8,14 +8,22 @@
     {{ book.author.givenName }} {{ book.author.familyName }}
 </span>
 
-<article>
-    
-    {% for chapter in book.getChapters %}
-        <h2>{{ chapter.title }}</h2>
-    {% else %}
-        <h2>{{ "No chapters" | trans }}</h2>
-    {% endfor %}
-    
-</article>
+{% if book.getChapters %}
+    <h2>{{ "Table of contents" | trans }}</h2>
+
+    <article id="table-of-contents">
+        
+        {% for chapter in book.getChapters %}
+            <h4>
+                <a href="{{ url('material_chapter', { 'book': book.link, 'chapter': chapter.id }) }}">
+                    {{ chapter.title }}
+                </a>
+            </h4>
+        {% endfor %}
+
+    </article>
+{% else %}
+    <h2>{{ "No chapters" | trans }}</h2>
+{% endif %}
         
 {% endblock %}
