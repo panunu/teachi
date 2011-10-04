@@ -1,6 +1,6 @@
 _index:
-    pattern:  /material/{link}
-    defaults: { _controller: TeachiMaterialBundle:Book:view }
+    pattern:  /material/{book}/{chapter}
+    defaults: { _controller: TeachiMaterialBundle:Book:view, chapter: 1, _locale: fi }
 
 _assetic:
     resource: .

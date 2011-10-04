@@ -11,7 +11,7 @@
 <article>
     
     {% for chapter in book.getChapters %}
-        {{ chapter.title }}
+        <h2>{{ chapter.title }}</h2>
     {% else %}
         <h2>{{ "No chapters" | trans }}</h2>
     {% endfor %}

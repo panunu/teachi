@@ -6,14 +6,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class BookController extends Controller
 {    
-    public function viewAction($link)
+    public function viewAction($book, $chapter)
     {
         $book = $this->getDoctrine()
                      ->getRepository('TeachiMaterialBundle:Book')
-                     ->findOneBy(array('link' => $link));
+                     ->findOneBy(array('link' => $book));
         
         if(!$book)
-            throw $this->createNotFoundException("The book '{$link}' does not exist");
+            throw $this->createNotFoundException('The book does not exist');
+        
+        
         
         return $this->render(
             'TeachiMaterialBundle:Book:view.html.twig',
