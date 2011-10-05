@@ -18,7 +18,7 @@ class BookController extends Controller
         return $this->render(
             'TeachiMaterialBundle:Book:view.html.twig',
             array(
-                'book'    => $book,
+                'book' => $book,
             )
         );
     }

@@ -8,12 +8,12 @@
     {{ book.author.givenName }} {{ book.author.familyName }}
 </span>
 
-{% if book.getChapters %}
+{% if book.chapters %}
     <h2>{{ "Table of contents" | trans }}</h2>
 
     <article id="table-of-contents">
         
-        {% for chapter in book.getChapters %}
+        {% for chapter in book.chapters %}
             <h4>
                 <a href="{{ url('material_chapter', { 'book': book.link, 'chapter': chapter.id }) }}">
                     {{ chapter.title }}

@@ -1,0 +1,23 @@
+{% extends "TeachiMaterialBundle::layout.html.twig" %}
+
+{% block content %}
+
+<h1>{{ chapter.book.title | raw }}</h1>
+
+<span class="author">
+    {{ chapter.book.author.givenName }} {{ chapter.book.author.familyName }}
+</span>
+
+<h2>{{ chapter.title }}</h2>
+
+<article>
+
+    {% for content in chapter %}
+        -
+    {% else %}
+    
+    {% endfor %}
+
+</article>
+
+{% endblock %}

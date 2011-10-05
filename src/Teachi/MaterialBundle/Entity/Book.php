@@ -3,7 +3,7 @@
 namespace Teachi\MaterialBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM,
-    Teachi\MainBundle\Entity;
+    Teachi\MainBundle;
 
 /**
  * Teachi\MaterialBundle\Entity\Book
@@ -107,7 +107,7 @@ class Book
      *
      * @param Teachi\MainBundle\Entity\Author $author
      */
-    public function setAuthor(Author $author)
+    public function setAuthor(MainBundle\Entity\Author $author)
     {
         $this->author = $author;
     }

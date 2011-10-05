@@ -38,7 +38,7 @@ class Content
     /**
      * @var Chapter
      *
-     * @ORM\ManyToOne(targetEntity="Chapter")
+     * @ORM\ManyToOne(targetEntity="Chapter", inversedBy="contents")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="Chapter", referencedColumnName="id")
      * })
