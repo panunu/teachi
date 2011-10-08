@@ -45,6 +45,11 @@ class Content
      */
     private $chapter;
 
+    
+    public function __toString()
+    {
+        return "{$this->content}";
+    }
 
 
     /**

@@ -1,23 +1,35 @@
 {% extends "TeachiMaterialBundle::layout.html.twig" %}
 
+{% block title %}{{ chapter.title | striptags }} - {{ chapter.book.title | striptags }}{% endblock %}
+
 {% block content %}
 
-<h1>{{ chapter.book.title | raw }}</h1>
+<header class="book">
+    {{ chapter.book.title | raw }}
+</header>
 
 <span class="author">
     {{ chapter.book.author.givenName }} {{ chapter.book.author.familyName }}
 </span>
 
-<h2>{{ chapter.title }}</h2>
-
-<article>
-
-    {% for content in chapter %}
-        
-    {% else %}
-    
+<ul class="pages">
+    {% for chapter in chapter.book.chapters %}
+        <a href="{{ url('material_chapter', { 'book': chapter.book.link, 'chapter': chapter.id }) }}" title="{{ chapter.title }}">
+            <li>
+                {{ chapter.number }}
+            </li>
+        </a>
     {% endfor %}
+</ul>
 
-</article>
+<header class="chapter">
+    {{ chapter.title }}
+</header>
+
+{% for content in contents %}
+    {{ content | raw }}
+{% else %}
+
+{% endfor %}
 
 {% endblock %}

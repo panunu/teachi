@@ -15,10 +15,16 @@ class ChapterController extends Controller
         if(!$chapter)
             throw $this->createNotFoundException('The chapter does not exist');
         
+        $contents = $this->getDoctrine()
+                         ->getRepository('TeachiMaterialBundle:Content')
+                         ->findBy(array('chapter' => $chapter->getId()), array('order' => 'asc'));
+                         //->findBy(array('chapter' => $chapter->getId()));
+        
         return $this->render(
             'TeachiMaterialBundle:Chapter:view.html.twig',
             array(
-                'chapter' => $chapter,
+                'chapter'  => $chapter,
+                'contents' => $contents
             )
         );
     }

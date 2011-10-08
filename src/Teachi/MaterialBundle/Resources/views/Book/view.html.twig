@@ -2,23 +2,23 @@
 
 {% block content %}
 
-<h1>{{ book.title | raw }}</h1>
+<header class="book">{{ book.title | raw }}</header>
 
 <span class="author">
     {{ book.author.givenName }} {{ book.author.familyName }}
 </span>
 
 {% if book.chapters %}
-    <h2>{{ "Table of contents" | trans }}</h2>
+    <header class="toc">{{ "Table of contents" | trans }}</header>
 
     <article id="table-of-contents">
         
         {% for chapter in book.chapters %}
-            <h4>
+            <h3>
                 <a href="{{ url('material_chapter', { 'book': book.link, 'chapter': chapter.id }) }}">
                     {{ chapter.title }}
                 </a>
-            </h4>
+            </h3>
         {% endfor %}
 
     </article>
