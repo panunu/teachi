@@ -20,6 +20,7 @@ class AppKernel extends Kernel
         );
 
         // Stack teachi related bundles here.
+        $bundles[] = new Teachi\FrameworkBundle\TeachiFrameworkBundle();
         $bundles[] = new Teachi\MainBundle\TeachiMainBundle();
         $bundles[] = new Teachi\MaterialBundle\TeachiMaterialBundle();
         

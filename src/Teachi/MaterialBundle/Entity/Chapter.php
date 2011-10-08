@@ -2,7 +2,8 @@
 
 namespace Teachi\MaterialBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping as ORM,
+    \Teachi\FrameworkBundle\Entity\AbstractEntity as Entity;
 
 /**
  * Teachi\MaterialBundle\Entity\Chapter
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="Chapter")
  * @ORM\Entity
  */
-class Chapter
+class Chapter extends Entity
 {
     /**
      * @var integer $id
@@ -19,21 +20,21 @@ class Chapter
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var integer $number
      *
      * @ORM\Column(name="number", type="integer", nullable=false)
      */
-    private $number;
+    protected $number;
 
     /**
      * @var string $title
      *
      * @ORM\Column(name="title", type="string", length=100, nullable=true)
      */
-    private $title;
+    protected $title;
 
     /**
      * @var Book
@@ -41,77 +42,6 @@ class Chapter
      * @ORM\ManyToOne(targetEntity="Book", inversedBy="chapters")
      * @ORM\JoinColumn(name="Book", referencedColumnName="id")
      */
-    private $book;
-
-
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set number
-     *
-     * @param integer $number
-     */
-    public function setNumber($number)
-    {
-        $this->number = $number;
-    }
-
-    /**
-     * Get number
-     *
-     * @return integer 
-     */
-    public function getNumber()
-    {
-        return $this->number;
-    }
-
-    /**
-     * Set title
-     *
-     * @param string $title
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * Get title
-     *
-     * @return string 
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * Set book
-     *
-     * @param Teachi\MaterialBundle\Entity\Book $book
-     */
-    public function setBook(Book $book)
-    {
-        $this->book = $book;
-    }
-
-    /**
-     * Get book
-     *
-     * @return Teachi\MaterialBundle\Entity\Book 
-     */
-    public function getBook()
-    {
-        return $this->book;
-    }
+    protected $book;
+    
 }

@@ -2,7 +2,8 @@
 
 namespace Teachi\MainBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping as ORM,
+    \Teachi\FrameworkBundle\Entity\AbstractEntity as Entity;
 
 /**
  * Teachi\MainBundle\Entity\Author
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="Author")
  * @ORM\Entity
  */
-class Author
+class Author extends Entity
 {
     /**
      * @var integer $id
@@ -19,21 +20,21 @@ class Author
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    protected $id;
 
     /**
-     * @var string $familyname
+     * @var string $familyName
      *
      * @ORM\Column(name="familyName", type="string", length=100, nullable=false)
      */
-    private $familyname;
+    protected $familyName;
 
     /**
-     * @var string $givenname
+     * @var string $givenName
      *
      * @ORM\Column(name="givenName", type="string", length=100, nullable=false)
      */
-    private $givenname;
+    protected $givenName;
 
     /**
      * @var Account
@@ -43,77 +44,5 @@ class Author
      *   @ORM\JoinColumn(name="Account", referencedColumnName="id")
      * })
      */
-    private $account;
-
-
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set familyname
-     *
-     * @param string $familyname
-     */
-    public function setFamilyname($familyname)
-    {
-        $this->familyname = $familyname;
-    }
-
-    /**
-     * Get familyname
-     *
-     * @return string 
-     */
-    public function getFamilyname()
-    {
-        return $this->familyname;
-    }
-
-    /**
-     * Set givenname
-     *
-     * @param string $givenname
-     */
-    public function setGivenname($givenname)
-    {
-        $this->givenname = $givenname;
-    }
-
-    /**
-     * Get givenname
-     *
-     * @return string 
-     */
-    public function getGivenname()
-    {
-        return $this->givenname;
-    }
-
-    /**
-     * Set account
-     *
-     * @param Teachi\MainBundle\Entity\Account $account
-     */
-    public function setAccount(Account $account)
-    {
-        $this->account = $account;
-    }
-
-    /**
-     * Get account
-     *
-     * @return Teachi\MainBundle\Entity\Account 
-     */
-    public function getAccount()
-    {
-        return $this->account;
-    }
+    protected $account;
 }
