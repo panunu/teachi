@@ -8,8 +8,6 @@ USE `teachi` ;
 -- -----------------------------------------------------
 -- Table `teachi`.`Account`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `teachi`.`Account` ;
-
 CREATE  TABLE IF NOT EXISTS `teachi`.`Account` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `username` VARCHAR(100) NOT NULL ,
@@ -23,8 +21,6 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `teachi`.`Author`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `teachi`.`Author` ;
-
 CREATE  TABLE IF NOT EXISTS `teachi`.`Author` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `Account` INT NULL ,
@@ -43,8 +39,6 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `teachi`.`Book`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `teachi`.`Book` ;
-
 CREATE  TABLE IF NOT EXISTS `teachi`.`Book` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `Author` INT NOT NULL ,
@@ -64,8 +58,6 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `teachi`.`Chapter`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `teachi`.`Chapter` ;
-
 CREATE  TABLE IF NOT EXISTS `teachi`.`Chapter` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `Book` INT NOT NULL ,
@@ -84,8 +76,6 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `teachi`.`Presentation`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `teachi`.`Presentation` ;
-
 CREATE  TABLE IF NOT EXISTS `teachi`.`Presentation` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `Book` INT NOT NULL ,
@@ -102,12 +92,10 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `teachi`.`Content`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `teachi`.`Content` ;
-
 CREATE  TABLE IF NOT EXISTS `teachi`.`Content` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `Chapter` INT NOT NULL ,
-  `order` INT NOT NULL DEFAULT 1 ,
+  `number` INT NOT NULL DEFAULT 1 ,
   `content` TEXT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_Content_Chapter1` (`Chapter` ASC) ,
@@ -122,8 +110,6 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `teachi`.`Slide`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `teachi`.`Slide` ;
-
 CREATE  TABLE IF NOT EXISTS `teachi`.`Slide` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `Presentation` INT NOT NULL ,
@@ -141,13 +127,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `teachi`.`Bullet`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `teachi`.`Bullet` ;
-
 CREATE  TABLE IF NOT EXISTS `teachi`.`Bullet` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `Slide` INT NOT NULL ,
   `Content` INT NULL ,
-  `order` INT NOT NULL DEFAULT 1 ,
+  `number` INT NOT NULL DEFAULT 1 ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_Bullet_Slide1` (`Slide` ASC) ,
   INDEX `fk_Bullet_Content1` (`Content` ASC) ,
