@@ -42,7 +42,7 @@ abstract class AbstractEntity
             return $property->getValue($this);
         }
                 
-        $property->setValue($this, current($args));
+        $property->setValue($this, current($parameters));
         return $this;
     }
 }

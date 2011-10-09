@@ -228,7 +228,6 @@ ul.pages
 // CONTENT //
 /////////////
 
-
 h1 { font-size: 64px; }
 
 h2 { font-size: 48px; margin-left: 3%; }
@@ -315,4 +314,37 @@ hr
     margin-right: 5%;
 
     border: none;
+}
+
+ol
+{
+    width:      100%;
+    float:      left;
+    margin:     0px;
+    padding:    0px;
+    list-style: none;
+
+    li { width: 100%; float: left; }
+}
+
+
+///////////////////////////
+// FUNCTIONALITY-RELATED //
+///////////////////////////
+
+.sortable-placeholder
+{
+    height:        100px;
+    margin-top:    2%;
+    margin-bottom: 2%;
+
+    box-shadow:    inset 1px 1px 1px @shadow;
+    border-radius: 8px;
+}
+
+.ui-sortable-helper
+{
+    background-color: @background;
+    border-radius:    8px;
+    opacity: 0.75;
 }

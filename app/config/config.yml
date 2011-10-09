@@ -1,3 +1,8 @@
+#services:
+    #my_mailer:
+        #class:        Acme\HelloBundle\Mailer
+        #arguments:    [sendmail]
+
 imports:
     - { resource: parameters.ini }
     - { resource: security.yml }

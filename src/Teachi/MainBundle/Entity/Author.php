@@ -45,4 +45,5 @@ class Author extends Entity
      * })
      */
     protected $account;
+    
 }

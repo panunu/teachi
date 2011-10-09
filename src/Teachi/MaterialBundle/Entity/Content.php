@@ -25,9 +25,9 @@ class Content extends Entity
     /**
      * @var integer $order
      *
-     * @ORM\Column(name="order", type="integer", nullable=false)
+     * @ORM\Column(name="number", type="integer", nullable=false)
      */
-    protected $order;
+    protected $number;
 
     /**
      * @var text $content

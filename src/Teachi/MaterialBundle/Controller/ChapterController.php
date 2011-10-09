@@ -17,7 +17,7 @@ class ChapterController extends Controller
         
         $contents = $this->getDoctrine()
                          ->getRepository('TeachiMaterialBundle:Content')
-                         ->findBy(array('chapter' => $chapter->getId()), array('order' => 'asc'));
+                         ->findBy(array('chapter' => $chapter->getId()), array('number' => 'asc'));
                          //->findBy(array('chapter' => $chapter->getId()));
         
         return $this->render(

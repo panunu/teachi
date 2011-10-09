@@ -6,6 +6,10 @@ material_chapter:
     pattern:  /materiaali/{book}/{chapter}
     defaults: { _controller: TeachiMaterialBundle:Chapter:view, _locale: fi }
 
+material_content_order:
+    pattern:  /material/content/re-order
+    defaults: { _controller: TeachiMaterialBundle:Content:order, _locale: fi }
+
 _assetic:
     resource: .
     type:     assetic
