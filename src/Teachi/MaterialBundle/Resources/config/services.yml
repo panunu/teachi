@@ -1,0 +1,11 @@
+services:
+    teachi_material.service.book:
+        class:     Teachi\MaterialBundle\Service\BookService
+        arguments: ["@doctrine.orm.entity_manager", "@teachi_material.repository.book"]
+        
+    teachi_material.repository.book:
+        class:           Teachi\MaterialBundle\Entity\Book
+        arguments:       [Teachi\MaterialBundle\Entity\Book]
+        factory_service: doctrine.orm.entity_manager
+        factory_method:  getRepository
+        
