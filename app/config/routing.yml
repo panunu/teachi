@@ -1,5 +1,5 @@
 material_book:
-    pattern:  /materiaali/{link}
+    pattern:  /materiaali/{book}
     defaults: { _controller: TeachiMaterialBundle:Book:view, _locale: fi }
 
 material_chapter:

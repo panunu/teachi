@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM,
  * Teachi\MaterialBundle\Entity\Chapter
  *
  * @ORM\Table(name="Chapter")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Teachi\MaterialBundle\Repository\ChapterRepository")
  */
 class Chapter extends Entity
 {
@@ -44,4 +44,12 @@ class Chapter extends Entity
      */
     protected $book;
     
+    /**
+     *
+     * @var ArrayCollection
+     * 
+     * @ORM\OneToMany(targetEntity="Content", mappedBy="chapter")
+     * @ORM\OrderBy({"number" = "ASC"})
+     */    
+    protected $contents;
 }

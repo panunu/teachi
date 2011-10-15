@@ -27,7 +27,7 @@
 </header>
 
 <ol id="sortable-content">
-    {% for content in contents %}
+    {% for content in chapter.contents %}
         <li id="content_block_{{ content.id }}" class="content-block">
             {{ content | raw }}
         </li>

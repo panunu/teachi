@@ -6,9 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class BookController extends Controller
 {    
-    public function viewAction($link)
+    public function viewAction($book)
     {
-        $book = $this->getBookService()->getBookByLink($link);
+        $book = $this->getBookService()->getBookByLink($book);
         
         if(!$book)
             throw $this->createNotFoundException('The book does not exist');
