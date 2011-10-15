@@ -6,10 +6,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class BookController extends Controller
 {    
-    public function viewAction($book)
+    public function viewAction($link)
     {
+        $book = $this->getBookService()->getBookByLink($link);
+        
+        if(!$book)
+            throw $this->createNotFoundException('The book does not exist');
+        
         return $this->render('TeachiMaterialBundle:Book:view.html.twig', array(
-            'book' => $this->getBookService()->getBookByLink($book),
+            'book' => $book,
         ));
     }
     
