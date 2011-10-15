@@ -7,6 +7,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller,
 
 class ContentController extends Controller
 {    
+    public function editAction()
+    {
+        
+    }
+    
     public function orderAction()
     {
         // TODO: Move into service.
