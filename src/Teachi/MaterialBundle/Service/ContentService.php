@@ -24,13 +24,24 @@ class ContentService
     }
     
     /**
+     * @param int    $id
+     * @param string $content 
+     */
+    public function update($id, $content)
+    {
+        $this->repository->find($id)->setContent($content);
+        $this->em->flush();
+    }
+    
+    /**
      * @param array $content 
      */
     public function organize(array $content)
     {
         foreach($content as $order => $id) {
             $this->repository->find($id)->setNumber($order + 1);
-            $this->em->flush();
         }
+        
+        $this->em->flush();
     }
 }

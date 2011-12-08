@@ -10,7 +10,7 @@ class ChapterController extends Controller
     {
         $chapter = $this->getChapterService()
             ->getChapterWithContentsByNumberAndBookLink($chapter, $book);
-        
+                
         if(!$chapter)
             throw $this->createNotFoundException('The chapter does not exist');
         

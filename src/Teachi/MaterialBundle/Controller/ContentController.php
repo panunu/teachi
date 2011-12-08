@@ -7,9 +7,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller,
 
 class ContentController extends Controller
 {    
-    public function editAction()
+    public function updateAction()
     {
+        $id      = $this->getRequest()->get('id');
+        $content = $this->getRequest()->get('content');
         
+        $this->getContentService()->update($id, $content);
+        
+        return new Response('ok'); // TODO: Return JSON response.
     }
     
     public function organizeAction()
@@ -18,8 +23,7 @@ class ContentController extends Controller
             $this->getRequest()->get('content_block')
         );
         
-        // TODO: Return correct response (JSON).
-        return new Response('ok');
+        return new Response('ok'); // TODO: Return JSON response.
     }
     
     /**

@@ -4,6 +4,10 @@
 
 {% block content %}
 
+{% javascripts output="/coffee/material.coffee" '@TeachiMaterialBundle/Resources/coffee/material.coffee' %}
+    <script type="text/coffeescript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
 <header class="book">
     {{ chapter.book.title | raw }}
 </header>
@@ -28,7 +32,7 @@
 
 <ol id="sortable-content">
     {% for content in chapter.contents %}
-        <li id="content_block_{{ content.id }}" class="content-block">
+        <li id="content_block_{{ content.id }}" data-id="{{ content.id }}" class="content-block">
             {{ content | raw }}
         </li>
     {% else %}

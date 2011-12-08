@@ -28,4 +28,3 @@ services:
         arguments:       [Teachi\MaterialBundle\Entity\Content]
         factory_service: doctrine.orm.entity_manager
         factory_method:  getRepository
-        

@@ -13,7 +13,7 @@ class ChapterService
     private $em;
 
     /**
-     * @var BookRepository
+     * @var ChapterRepository
      */
     private $repository;
 

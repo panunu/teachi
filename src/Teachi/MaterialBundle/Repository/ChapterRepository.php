@@ -9,7 +9,8 @@ class ChapterRepository extends Repository
 {
     public function findChapterWithContentsByNumberAndBookLink($number, $book)
     {
-        $qb = $this->_em->createQueryBuilder()->select('chapter')
+        $qb = $this->getEntityManager()->createQueryBuilder()
+            ->select('chapter')
             ->from('Teachi\MaterialBundle\Entity\Chapter', 'chapter')
             ->join('chapter.book', 'book', Join::WITH, 'book.link = :link')
             ->where('chapter.number = :number')
