@@ -1,1 +1,1 @@
-<img src="https://github.com/panunu/teachi/blob/master/web/img/mentor.gif" alt="teachi" />
+<img src="https://github.com/panunu/teachi/raw/master/web/img/mentor.gif" alt="teachi" />
