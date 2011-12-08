@@ -7,6 +7,10 @@ services:
         class:     Teachi\MaterialBundle\Service\ChapterService
         arguments: ["@doctrine.orm.entity_manager", "@teachi_material.repository.chapter"]
         
+    teachi_material.service.content:
+        class:     Teachi\MaterialBundle\Service\ContentService
+        arguments: ["@doctrine.orm.entity_manager", "@teachi_material.repository.content"]
+        
     teachi_material.repository.book:
         class:           Teachi\MaterialBundle\Entity\Book
         arguments:       [Teachi\MaterialBundle\Entity\Book]
@@ -16,6 +20,12 @@ services:
     teachi_material.repository.chapter:
         class:           Teachi\MaterialBundle\Entity\Chapter
         arguments:       [Teachi\MaterialBundle\Entity\Chapter]
+        factory_service: doctrine.orm.entity_manager
+        factory_method:  getRepository
+        
+    teachi_material.repository.content:
+        class:           Teachi\MaterialBundle\Entity\Content
+        arguments:       [Teachi\MaterialBundle\Entity\Content]
         factory_service: doctrine.orm.entity_manager
         factory_method:  getRepository
         

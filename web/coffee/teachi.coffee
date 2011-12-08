@@ -15,7 +15,7 @@ $('#sortable-content').sortable
     update: (event, ui) ->
         $.ajax
             data: $(this).sortable 'serialize'
-            url: '/web/material/content/re-order'
+            url: '/web/material/content/organize'
             success: (data) -> return
 
 

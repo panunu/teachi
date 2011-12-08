@@ -12,19 +12,21 @@ class ContentController extends Controller
         
     }
     
-    public function orderAction()
+    public function organizeAction()
     {
-        // TODO: Move into service.
-        foreach($this->getRequest()->get('content_block') as $order => $id) {
-            $content = $this->getDoctrine()->getRepository('TeachiMaterialBundle:Content')
-                ->find($id);
-                        
-            $content->setNumber($order++);
-            
-            $this->getDoctrine()->getEntityManager()->flush();
-        }
+        $this->getContentService()->organize(
+            $this->getRequest()->get('content_block')
+        );
         
         // TODO: Return correct response (JSON).
         return new Response('ok');
+    }
+    
+    /**
+     * @return ContentService
+     */
+    protected function getContentService()
+    {
+        return $this->get('teachi_material.service.content');
     }
 }
