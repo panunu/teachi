@@ -1,0 +1,15 @@
+material_book:
+    pattern:  /materiaali/{book}
+    defaults: { _controller: TeachiMaterialBundle:Book:view, _locale: fi }
+
+material_chapter:
+    pattern:  /materiaali/{book}/{chapter}
+    defaults: { _controller: TeachiMaterialBundle:Chapter:view, _locale: fi }
+
+material_content_organize:
+    pattern:  /material/content/organize
+    defaults: { _controller: TeachiMaterialBundle:Content:organize, _locale: fi }
+    
+material_content_update:
+    pattern:  /material/content/update
+    defaults: { _controller: TeachiMaterialBundle:Content:update, _locale: fi }
