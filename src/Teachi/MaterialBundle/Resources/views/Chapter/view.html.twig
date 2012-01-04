@@ -8,7 +8,7 @@
     <script type="text/coffeescript" src="{{ asset_url }}"></script>
 {% endjavascripts %}
 
-<header class="book">
+<header class="book small">
     {{ chapter.book.title | raw }}
 </header>
 
@@ -16,6 +16,7 @@
     {{ chapter.book.author.givenName }} {{ chapter.book.author.familyName }}
 </span>
 
+{#
 <ul class="pages">
     {% for chapter in chapter.book.chapters %}
         <a href="{{ url('material_chapter', { 'book': chapter.book.link, 'chapter': chapter.id }) }}" title="{{ chapter.title }}">
@@ -25,6 +26,7 @@
         </a>
     {% endfor %}
 </ul>
+#}
 
 <header class="chapter">
     {{ chapter.title }}

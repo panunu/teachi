@@ -3,7 +3,8 @@
 namespace Teachi\MaterialBundle\Service;
 
 use Doctrine\ORM\EntityManager,
-    Doctrine\ORM\EntityRepository;
+    Doctrine\ORM\EntityRepository,
+    Teachi\MaterialBundle\Entity\Chapter;
 
 class ChapterService
 {
@@ -33,5 +34,23 @@ class ChapterService
         return $this->repository->findChapterWithContentsByNumberAndBookLink(
             $number, $link
         );
+    }
+    
+    /**
+     * @param  Chapter $chapter 
+     * @return Chapter|null
+     */
+    public function getNextChapter(Chapter $chapter)
+    {
+        return $this->repository->findNextChapter($chapter);
+    }
+    
+    /**
+     * @param  Chapter $chapter 
+     * @return Chapter|null
+     */
+    public function getPreviousChapter(Chapter $chapter)
+    {
+        return $this->repository->findPreviousChapter($chapter);
     }
 }
