@@ -15,7 +15,9 @@ class ChapterController extends Controller
             throw $this->createNotFoundException('The chapter does not exist');
         
         return $this->render('TeachiMaterialBundle:Chapter:view.html.twig', array(
-            'chapter'  => $chapter
+            'chapter' => $chapter,
+            'next'    => $this->getChapterService()->getNextChapter($chapter),
+            'prev'    => $this->getChapterService()->getPreviousChapter($chapter)
         ));
     }
     
